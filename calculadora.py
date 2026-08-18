@@ -35,6 +35,8 @@ while True:
                 if valor_user2 == 0:
                     if valor_user1 == 0:
                         print("Indeterminação matemática! 0/0 não é definido!")
+                    else:
+                        print("Não é possível dividir por 0!")
                 else:
                     total = valor_user1 / valor_user2
                     print(f"O valor da sua conta é: {total}")
