@@ -1,6 +1,7 @@
 print("Calculadora Super Master Racer!!!")
 
 while True:
+    # Loop responsável por capturar os números inseridos pelo usuário
     while True:
         try:
             valor_user1 = float(input("Insira o primeiro valor: "))
@@ -8,7 +9,7 @@ while True:
             break
         except ValueError:
             print("Insira apenas valores numéricos!")
-        #print(f"Valor 1: {valor_user1}. Valor 2: {valor_user2}")
+    #Loop responsável por decidir qual operação matemática realizar
     while True:
         try:
             print('''
@@ -21,25 +22,30 @@ while True:
             ''')
             operacao = int(input("Escolha a operação: "))
             total = 0
-            if operacao == 1:
+            if operacao == 1: # Soma
                 total = valor_user1 + valor_user2
                 print(f"O valor da sua conta é: {total}")
                 break
-            elif operacao == 2:
+            elif operacao == 2: # Subtração
                 total = valor_user1 - valor_user2
                 print(f"O valor da sua conta é: {total}")
                 break
-            elif operacao == 3:
-                total = valor_user1 / valor_user2
-                print(f"O valor da sua conta é: {total}")
-                break
-            elif operacao == 4:
+            elif operacao == 3: # Divisão
+                # Tratamento específico para divisão por zero
+                if valor_user2 == 0:
+                    if valor_user1 == 0:
+                        print("Indeterminação matemática! 0/0 não é definido!")
+                else:
+                    total = valor_user1 / valor_user2
+                    print(f"O valor da sua conta é: {total}")
+                    break
+            elif operacao == 4: # Multiplicação
                 total = valor_user1 * valor_user2
                 print(f"O valor da sua conta é: {total}")
                 break
-            elif operacao == 5:
+            elif operacao == 5: # Escolher números novamente
                 break
-            elif operacao == 0:
+            elif operacao == 0: # Sair
                 print("Até mais!!")
                 exit(0)
             else:
